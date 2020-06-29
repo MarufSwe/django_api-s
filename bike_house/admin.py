@@ -3,15 +3,15 @@ from .models import *
 # Register your models here.
 
 class PlaceAdmin(admin.ModelAdmin):
-    list_display = ['name', 'address']
+    list_display = ['id', 'name', 'address']
 
 
 class BikeHouseAdmin(admin.ModelAdmin):
-    list_display = ['name', 'cc', 'model', 'price', 'place']
+    list_display = ['id', 'name', 'cc', 'model', 'price', 'place']
 
 
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ['name', 'bike_house']
+    list_display = ['id', 'name', 'bike_house']
 
 
 admin.site.register(Place, PlaceAdmin)

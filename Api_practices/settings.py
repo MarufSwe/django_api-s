@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post_category.apps.PostCategoryConfig',
-    'bike_house'
+    'bike_house',
+    'products_category'
 ]
 
 MIDDLEWARE = [
