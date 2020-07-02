@@ -37,6 +37,10 @@ class Order(models.Model):
     shipping_date = models.DateField()
     shipping_address = models.TextField()
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.errors = None
+
     def __str__(self):
         return self.customer_name
 
