@@ -4,7 +4,7 @@ from django.db import connection
 
 # configure settings for project
 # need to run this before calling models from application!
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'root.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Api_practices.settings')
 django.setup()
 
 # faker importing
@@ -37,7 +37,7 @@ supplier_name_list = ['tt', 'ifrana', 'farhana', 'hr']
 # 1st, creating the priority object with fake data
 def add_category():
     category = Category.objects.get_or_create(
-        name=random.choice(category_name_list),
+        category_name=random.choice(category_name_list),
     )[0]
 
     # note: [0] = Usage of get_or_create() method, if priority object already exists then get from first index.
@@ -63,7 +63,7 @@ def populate(n):
             price=random.choice(price_list),
             quantity=random.choice(quantity_list),
             in_stock=random.choice(in_stock_list),
-            supplier_name=random.choice(supplier_name_list),
+            supplier_name=fake_data.name(),
 
             category=category,
         )
